@@ -4,7 +4,7 @@
 ul{list-style: none;}
 a{text-decoration: none;}
 h1{font-size: 42px;}
-a, h1, p{color: #502314;}
+a, h1, h2, p{color: #502314;}
 
 
 .bk header{
@@ -201,9 +201,9 @@ section .home_my_con p img{
     height: 100%;
     object-fit: cover;
 }
-section .home_my_con .my_con_txt > h1{
+section .home_my_con .my_con_txt > h2{
     padding-bottom: 20px;
-    font-size: 22px;
+    font-size: 23px;
     background: #fffcf8;
 }
 section .home_my_con .my_con_txt > div{
@@ -225,8 +225,9 @@ section .home_delivery{
     width: 100%;
     height: 160px;
     padding: 25px 30px;
-    background: #fffcf8;
+    background: #502314;
     box-sizing: border-box;
+    border-radius: 15px;
 }
 
 section .home_delivery .del_banner{
@@ -249,7 +250,6 @@ section .home_custrmer_txt .customer_03
 {
     width: 100%;
     flex: 1 1 30%;
-    background: #ccc;
 }
 section .home_custrmer_txt .customer_01{
     display: flex;
@@ -258,21 +258,12 @@ section .home_custrmer_txt .customer_01{
 }
 .home_custrmer_txt .customer_01 .cu_brand,
 .home_custrmer_txt .customer_01 .cu_esg{
-    background: #ddd;
+    background: #fffcf8;
     height: 50%;
-    padding: 20px;
+    border-radius: 15px;
 }
-.customer_01 .cu_brand p, .customer_01 .cu_esg p
-{
-    width: 100px;
-    height: 36px;
-    padding: 10px 16px;
-    font-size: 16px;
-    line-height: 16px;
-    background: #aaa;
-    box-sizing: border-box;
-    text-align: center;
-    margin-bottom: 20px;
+.cu_brand h2, .cu_esg h2{
+    background: #fffcf8;
 }
 .home_custrmer_txt img{
     width: 100%;
@@ -280,6 +271,42 @@ section .home_custrmer_txt .customer_01{
     object-fit: cover;
     vertical-align: middle;
 }
+section .customer_02, section .customer_03{
+    width: 100%;
+}
+section .my_con_txt{
+    width: 100%;
+    background: #fffcf8;
+    border-radius: 15px 15px 0 0;
+    padding: 20px 20px;
+    box-sizing: border-box;
+}
+section .home_custrmer_txt .my_con_txt p:first-child{
+    width: 20%;
+    padding: 10px 0;
+    font-size: 13px;
+    line-height: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    background: #faf4ed;
+}
+
+
+section .customer_02 .my_con_txt > h2,
+section .customer_03 .my_con_txt > h2{
+    padding-bottom: 20px;
+    font-size: 22px;
+    background: #fffcf8;
+}
+
+section .my_con_txt p img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /*앱 홍보 배너*/
 section .home_app{
     margin: 50px 0;
@@ -287,8 +314,9 @@ section .home_app{
     width: 100%;
     height: 370px;
     padding: 25px 30px;
-    background: #ccc;
+    background: #502314;
     box-sizing: border-box;
+    border-radius: 15px;
 }
 
 /*이용약관 및 카피라이트*/
@@ -299,7 +327,7 @@ section footer .foot_copyright{
 section .terms_of_use{
     display: flex;
     margin-bottom: 20px;
-    padding-left: 200px;
+    padding-left: 300px;
     gap: 20px;
     font-size: 14px;
 }
