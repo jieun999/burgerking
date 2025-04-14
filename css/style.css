@@ -1,0 +1,311 @@
+@charset "ytf-8";
+
+*{margin: 0;padding: 0;background: #f5ebdc;}
+ul{list-style: none;}
+a{text-decoration: none;}
+h1{font-size: 42px;}
+a, h1, p{color: #502314;}
+
+
+.bk header{
+    max-width: 1620px;
+    width: 100%;
+    padding: 0 60px;
+    position: sticky;
+    top: 0;
+    background: #f5ebdc;
+    box-sizing: border-box;
+    z-index: 999;
+    margin: 0 auto;
+}
+.bk header .top{
+    display: flex;
+    height: 100px;
+    margin: 0 auto;
+    align-items: center;
+}
+.bk header .logo{
+    min-width: 200px;
+    height: 25px;
+    background: url(../images/bg_logo.svg) no-repeat;
+}
+.bk header .menu {
+    width: 100%;
+    max-width: 1620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.bk header .menu ul{
+    display: flex;
+}
+.bk header .menu ul li > a{
+    padding: 10px 20px;
+}
+.bk header .top > a{
+    height: 40px;
+    padding: 5px 20px 5px 35px;
+    font-size: 13px;
+    white-space: nowrap;
+    border-radius: 30px;
+    line-height: 30px;
+    background-color: rgba(80, 35, 20, .05);
+    background-size: 14px;
+    background-image: url(../images/ico_tit_store.svg);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    box-sizing: border-box;
+    font-weight: bold;
+    position: relative;
+}
+.sub{display: none;}
+
+
+section{
+    width: 100%;
+    height: 100%;
+    max-width: 1620px;
+    margin: 0px auto;
+    padding: 40px 60px 0;
+    box-sizing: border-box;
+}
+
+/* 배너 */
+section .home_banner{
+    display: flex;
+    margin-bottom: 50px;
+    gap: 10px;
+}
+section .home_banner .header_slide{
+    flex: 1;
+    width: calc(61.5% - 12px);
+    margin: 0;
+}
+section .home_banner .header_slide img{
+    width: 100%;
+}
+section .home_banner .header_con{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    max-width: 462px;
+    gap: 10px;
+    /* margin: 0 0 0 auto; */
+}
+section .home_banner .header_con_01,
+section .home_banner .header_con_02
+{
+    width: 100%;
+    height: 50%;
+    background: #ccc;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* 광고영상 */
+section .home_ad{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 50px 0;
+}
+section .home_ad .bk_title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+section .home_ad h1{
+    flex: 1 1 0%;
+    /* margin-top: 20px; */
+}
+section .home_ad p{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+    word-break: keep-all;
+}
+section .home_ad .ad_con > div{
+    width: 100%;
+    display: flex;
+    gap: 2%;
+}
+section .home_ad .ad_con_01,
+section .home_ad .ad_con_02,
+section .home_ad .ad_con_03{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    flex: 1 1 30%;
+    text-align: center;
+}
+section .home_ad .ad_con_01::after,
+section .home_ad .ad_con_02::after,
+section .home_ad .ad_con_03::after
+{
+    content: url(../images/video_thumbnail/btn_play.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+section .home_ad .ad_con p img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 매장소개 */
+section .home_my{
+    width: 100%;
+    height: 100%;
+    margin: 50px 0;
+}
+section .home_my_con{
+    max-width: 1620px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 2%;
+}
+
+section .home_my_con .my_con_txt{
+    width: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    background: #fffcf8;
+    border-radius: 10px 10px 0 0;
+}
+section .home_my_con .my_con_txt p{
+    width: 15%;
+    padding: 10px 0;
+    font-size: 13px;
+    line-height: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    background: #faf4ed;
+}
+
+.home_my_con .home_my_con_01,
+.home_my_con .home_my_con_02,
+.home_my_con .home_my_con_03{
+    width: 100%;
+    height: 100%;
+    flex: 1 1 30%;
+}
+section .home_my_con p img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section .home_my_con .my_con_txt > h1{
+    padding-bottom: 20px;
+    font-size: 22px;
+    background: #fffcf8;
+}
+section .home_my_con .my_con_txt > div{
+    display: flex;
+    justify-content: flex-end;
+    background: #fffcf8;
+}
+section .home_my_con .my_con_txt > div >a{
+    padding-right: 30px;
+    background: url(../images/ico_move.svg) no-repeat right;
+    font-weight: bold;
+}
+
+/* 집에서 만나는 버거킹 */
+
+section .home_delivery{
+    margin: 50px 0;
+    max-width: 1620px;
+    width: 100%;
+    height: 160px;
+    padding: 25px 30px;
+    background: #fffcf8;
+    box-sizing: border-box;
+}
+
+section .home_delivery .del_banner{
+    
+}
+
+/*고객과 함께 성장하는 버거킹*/
+section .home_customer{
+    width: 100%;
+    margin: 50px 0;
+}
+section .home_customer .home_custrmer_txt{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+section .home_custrmer_txt .customer_01,
+section .home_custrmer_txt .customer_02,
+section .home_custrmer_txt .customer_03
+{
+    width: 100%;
+    flex: 1 1 30%;
+    background: #ccc;
+}
+section .home_custrmer_txt .customer_01{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.home_custrmer_txt .customer_01 .cu_brand,
+.home_custrmer_txt .customer_01 .cu_esg{
+    background: #ddd;
+    height: 50%;
+    padding: 20px;
+}
+.customer_01 .cu_brand p, .customer_01 .cu_esg p
+{
+    width: 100px;
+    height: 36px;
+    padding: 10px 16px;
+    font-size: 16px;
+    line-height: 16px;
+    background: #aaa;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.home_custrmer_txt img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+/*앱 홍보 배너*/
+section .home_app{
+    margin: 50px 0;
+    max-width: 1620px;
+    width: 100%;
+    height: 370px;
+    padding: 25px 30px;
+    background: #ccc;
+    box-sizing: border-box;
+}
+
+/*이용약관 및 카피라이트*/
+section footer .foot_copyright{
+    width: 100%;
+    padding:  40px 60px;
+}
+section .terms_of_use{
+    display: flex;
+    margin-bottom: 20px;
+    padding-left: 200px;
+    gap: 20px;
+    font-size: 14px;
+}
+section footer .copyright{
+    display: flex;
+}
+section footer .copyright .information{
+    margin-left: 55px;
+}
