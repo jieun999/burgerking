@@ -1,4 +1,4 @@
-@charset "ytf-8";
+@charset "utf-8";
 
 *{margin: 0;padding: 0;}
 ul{list-style: none;}
@@ -67,7 +67,6 @@ a, h1, h2, p{color: #502314;}
 
 section{
     width: 100%;
-    height: 100%;
     max-width: 1620px;
     margin: 0px auto;
     padding: 40px 60px 0;
@@ -82,18 +81,49 @@ section .home_banner{
     gap: 10px;
 }
 section .home_banner .header_slide{
+    max-width: 1620px;
+    width: 100%;
+    margin: 0 auto;
+}
+section .home_banner .header_slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.home_banner .swiper {
+   /*  width: 100%;*/
+    height: 675px;
+    width: 1160px;
+    display: flex;
+    margin-bottom: 50px;
+  }
+.home_banner .swiper-wrapper{
     flex: 1;
     width: calc(61.5% - 12px);
     margin: 0;
 }
-section .home_banner .header_slide img{
+.home_banner .swiper-slide {
     width: 100%;
-}
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home_banner .swiper-slide > div > p img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 section .home_banner .header_con{
     display: flex;
     flex-direction: column;
-    width: 40%;
-    max-width: 462px;
+    width: 100%;
+    height: 675px;
+    max-width: 500px;
     gap: 10px;
     /* margin: 0 0 0 auto; */
 }
@@ -104,7 +134,12 @@ section .home_banner .header_con_02
     height: 50%;
     background: #ccc;
     font-size: 30px;
-    text-align: center;
+    text-align: center; 
+    background: #ccc;
+   /* display: flex;
+    flex-direction: column;
+    width: 38.5%;
+    max-width: 462px;*/
 }
 
 /* 광고영상 */
@@ -217,7 +252,37 @@ section .home_my_con .my_con_txt > div >a{
     background: url(../images/ico_move.svg) no-repeat right;
     font-weight: bold;
 }
+.home_my_con_03 {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  .home_my .swiper {
+    width: 100%;
+    height: 100%;
+  }
 
+  .home_my .swiper-slide {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home_my .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 /* 집에서 만나는 버거킹 */
 
 section .home_delivery{
@@ -298,14 +363,14 @@ section .customer_03 .my_con_txt > h2{
     font-size: 22px;;
 }
 
-section .my_con_txt p img{
+/* section .my_con_txt p img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+} */
 
 /*앱 홍보 배너*/
-section .home_app{
+section .home_app_banner{
     margin: 50px 0;
     max-width: 1620px;
     width: 100%;
@@ -314,8 +379,94 @@ section .home_app{
     background: #e4d7c8;
     box-sizing: border-box;
     border-radius: 15px;
+    position: relative;
 }
-
+.home_app_main{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
+.home_app {
+    width: 406px;
+    height: 377px;
+    background: url(https://www.burgerking.co.kr/img/bg_appdown_phone.png);
+    overflow: hidden;
+    position: relative;
+    top: -33px;
+    left: 130px;
+  }
+  .home_app .inner {
+    position: absolute;
+    left: 130px;
+    top: 44px;
+    /* top: -130px; */
+    width: 232px;
+    height: 335px;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    transition: 1s;
+  }
+  .home_app .inner ul {
+    display: flex;
+    transition: 0.5s;
+  }
+  .home_app ul li {
+    position: relative;
+    top: 0;
+    flex: 1 0 232px;
+  }
+  .home_app ul li.on {
+    top: -190px;
+    transition: 0.5s;
+    transition-delay: 1s;
+  }
+  .home_app ul li img {
+    width: 100%;
+  }
+  .app_txt{
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+  }
+  .app_txt_title{
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+  }
+  .app_txt_title span{
+    color: #d62300;
+  }
+  .app_list ul{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+  }
+  .app_list ul li{
+    font-size: 19px;
+    color: #fffcf8;
+    background: #502314;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  .app_download{
+    display: flex;
+    gap: 20px;
+  }
+  .btn_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+  }
+  .btn_area p{
+    cursor: pointer;
+  }
 /*이용약관 및 카피라이트*/
 footer {
     max-width: 1620px;
@@ -342,3 +493,22 @@ footer .copyright{
 footer .copyright .information{
     margin-left: 55px;
 }
+#popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(119, 92, 84, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+  }
+  #popup .pop {
+    width: 900px;
+    height: 500px;
+    border-radius: 20px;
+    background: #ccc;
+  }
