@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+
+    .home_my_con_03 {
+        width: 30%;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="home_my_con_03">
+      <div class="swiper mySwiper">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="my_con_txt">
+                    <p>버거킹의 자랑, 와퍼!<br>Real WHOPPER</p>
+                    <div class="my_con_btn"><a href="#">가까운 매장 찾아보기</a></div>
+                </div>
+                <p><img src="./images/my/slide/my_slide01.png" alt=""></p>
+            </div>
+            <div class="swiper-slide">
+                <div class="my_con_txt">
+                    <p>불맛에 진심인 브랜드<br>FLAMED GRILLED</p>
+                    <div class="my_con_btn"><a href="#">가까운 매장 찾아보기</a></div>
+                </div>
+                <p><img src="./images/my/slide/my_slide02.png" alt=""></p>
+            </div>
+            <div class="swiper-slide">
+                <div class="my_con_txt">
+                    <p>신선한 원재료 사용<br>패티와 야채, 소스</p>
+                    <div class="my_con_btn"><a href="#">가까운 매장 찾아보기</a></div>
+                </div>
+                <p><img src="./images/my/slide/my_slide03.png" alt=""></p>
+            </div>
+            <div class="swiper-slide">
+                <div class="my_con_txt">
+                    <p>QUALITY<br>엄격한 품질 관리 시스템</p>
+                    <div class="my_con_btn"><a href="#">가까운 매장 찾아보기</a></div>
+                </div>
+                <p><img src="./images/my/slide/my_slide04.png" alt=""></p>
+            </div>
+            <div class="swiper-slide">
+                <div class="my_con_txt">
+                    <p>SERVICE<br>신속, 정확, 친절한 서비스</p>
+                    <div class="my_con_btn"><a href="#">가까운 매장 찾아보기</a></div>
+                </div>
+                <p><img src="./images/my/slide/my_slide05.png" alt=""></p>
+            </div>
+            <div class="swiper-slide">
+                <div class="my_con_txt">
+                    <p>CLEANILINESS<br>철저한 위생 관리</p>
+                    <div class="my_con_btn"><a href="#">가까운 매장 찾아보기</a></div>
+                </div>
+                <p><img src="./images/my/slide/my_slide06.png" alt=""></p>
+            </div>
+            <div class="swiper-slide">
+                <div class="my_con_txt">
+                    <p>맛에 대한 신뢰<br>Trust in Taste</p>
+                    <div class="my_con_btn"><a href="#">가까운 매장 찾아보기</a></div>
+                </div>
+                <p><img src="./images/my/slide/my_slide07.png" alt=""></p>
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper02 = new Swiper(".home_my_con_03 .mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>

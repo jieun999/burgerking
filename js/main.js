@@ -1,3 +1,5 @@
+
+
 //top 슬라이드
 var swiper01 = new Swiper(".header_slide .mySwiper", {
     speed: 1000,
@@ -16,22 +18,22 @@ var swiper01 = new Swiper(".header_slide .mySwiper", {
   });
 
   // con 슬라이드
-  // var swiper02 = new Swiper(".home_my_con_03 .mySwiper", {
-  //   spaceBetween: 30,
-  //   centeredSlides: true,
-  //   autoplay: {
-  //     delay: 2500,
-  //     disableOnInteraction: false,
-  //   },
-  //   pagination: {
-  //     el: ".swiper-pagination",
-  //     clickable: true,
-  //   },
-  //   navigation: {
-  //     nextEl: ".swiper-button-next",
-  //     prevEl: ".swiper-button-prev",
-  //   },
-  // });
+  var swiper02 = new Swiper(".home_my_con_03 .mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 
   //app 애니메이션
   let innerUl = document.querySelector(".inner ul");
