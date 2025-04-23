@@ -57,15 +57,17 @@ a, h1, h2, p{
     background: url(../images/bg_logo.svg) no-repeat;
 }
 .bk header .menu {
-    width: 100%;
+    width: 1160px;
+    height: 100%;
     max-width: 1620px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     font-weight: bold;
+    position: relative;
 }
-.bk header .menu ul{
+.bk header .menu > ul{
     display: flex;
 }
 .bk header .menu ul li > a{
@@ -85,13 +87,24 @@ a, h1, h2, p{
     background-position: 15px center;
     box-sizing: border-box;
     font-weight: bold;
-    position: relative;
+    /* position: relative; */
 }
-.sub{
-    display: none;
+.bk header .menu .sub{
+    width: 380px;
+    position: absolute;
+    top: 60px;
+    font-size: 24px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
 }
-
-
+.bk header .menu .sub.on{
+    opacity: 1;
+    transition: 0.3s;
+}
+.bk header .menu .sub > li a{
+    font-size: 18px;
+}
 section{
     width: 100%;
     max-width: 1620px;

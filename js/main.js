@@ -1,4 +1,13 @@
+//sub 메뉴
+let sub = document.querySelectorAll(".sub");
 
+function myfnc(){
+  sub.forEach(function(v, k){
+    // v.style.height = 0+"px";
+    v.classList.remove("on");
+  })
+  // document.querySelector(".head").style.height = 80 + "px";
+}
 
 //top 슬라이드
 var swiper01 = new Swiper(".header_slide .mySwiper", {
