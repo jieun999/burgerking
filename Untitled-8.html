@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+
+        .grid-container{
+            /* height: 700px; */
+            display: grid;
+            /* -> display: inline-grid
+            부모가 자식 크기를 맞추는 속성 */
+            background: #ccc;
+            /* grid-template-columns: 100px 200px 500px; */
+            grid-template-columns: 1fr 1fr 1fr;
+            /* grid-template-columns:repeat(3, 1fr 2fr); */
+            /* grid-template-columns: 200px 1fr; */
+            /* grid-template-columns: 100px 200px 300px;
+            grid-template-rows: 100px 200px minmax(100px, auto); */
+            /* grid-auto-rows: 100px 200px; */
+            /* row-gap: 20px;
+             column-gap: 10px;*/
+            gap: 10px 20px;
+            /* column-gap, row-gap을 gap이라는 속성으로 한 번에 쓸 수 있다.
+            순서는 row->column */
+        }
+        .grid-item{
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <ul class="grid-container">
+        <li class="grid-item">1</li>
+        <li class="grid-item">2</li>
+        <li class="grid-item">3</li>
+        <li class="grid-item">4</li>
+        <li class="grid-item">5</li>
+        <li class="grid-item">6</li>
+        <li class="grid-item">7</li>
+        <li class="grid-item">8</li>
+        <li class="grid-item">9</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+*{margin: 0;padding: 0;}
+.wrap {
+    background: #f5ebdc;
+}
+.wrap .best{
+    max-width: 1620px;
+    margin: 0 auto;
+    padding: 40px 60px 0;
+}
+
+.wrap .best .menu_list ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.wrap .best .menu_list ul li{
+    padding: 20px 50px;
+    background: #fffcf8;
+    text-align: center;
+    word-break: keep-all;
+    border-radius: 10px;
+}
+.wrap .best .menu_list .burger_flag{
+    display: flex;
+    justify-content: space-between;
+}
+.wrap .best .menu_list ul li .burger_img img{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}

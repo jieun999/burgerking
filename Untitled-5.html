@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{margin: 0;padding: 0;}
+      ul{list-style: none;}
+      a{text-decoration: none;color: #502314;font-weight: bold;}
+      
+      
+      header{
+        position: relative;
+        width: 1620px;
+        padding: 0 60px;
+        box-sizing: border-box;
+        background: #f5ebdc;
+        margin: 0 auto;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .bk header .logo{
+        min-width: 200px;
+        height: 25px;
+        background: url(../images/bg_logo.svg) no-repeat;
+        text-align: left;
+      }
+      header .nav{
+        width: 100%;
+      }
+      .menu {
+        max-width: 1620px;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        margin: 0 auto;
+        font-size: 24px;
+        background: #f5ebdc;
+      }
+      .menu ul {
+        display: flex;
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .menu ul li {
+        flex: 1 1 10%;
+        text-align: center;
+        line-height: 50px;
+      }
+      .menu ul li a:hover,
+      .menu ul li a.on {
+        color: #d62300;
+      }
+      .menu ul li a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .submenu {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 50px;
+        background: #502314;
+        border-radius: 0 0 15px 15px;
+      }
+      .submenu .lnb {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .submenu .lnb > ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      .submenu .lnb > ul > li {
+        flex: 1 1 20%;
+        line-height: 40px;
+        text-align: center;
+      }
+      .submenu .lnb > ul > li a {
+        color: #70554c;
+      }
+      .submenu .lnb > ul > li a:hover {
+        color: #fffcf8;
+      }
+      .bk header .franchise{
+        min-width: 200px;
+        text-align: right;
+      } 
+      .bk header > .franchise a{
+        height: 40px;
+        padding: 5px 20px 5px 35px;
+        font-size: 13px;
+        white-space: nowrap;
+        border-radius: 30px;
+        line-height: 30px;
+        background-color: rgba(80, 35, 20, .05);
+        background-size: 14px;
+        background-image: url(../images/ico_tit_store.svg);
+        background-repeat: no-repeat;
+        background-position: 15px center;
+        box-sizing: border-box;
+        font-weight: bold;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>      
+        $(function(){
+            $(".submenu").slideUp(500);
+
+            $(".menu ul li").hover(function(){
+                $(".submenu").stop().slideDown(500);
+            },function(){
+                $(".submenu").stop().slideUp(500);
+            });
+
+            $(".submenu").hover(function(){
+                $(".submenu").stop().slideDown(500);
+            },function(){
+                $(".submenu").stop().slideUp(500);
+            });
+        });     
+    </script>
+  </head>
+  <body>
+    <div class="bk">
+      <header>
+        <h1 class="logo"></h1>
+        <div class="nav">
+          <div class="menu">
+            <ul>
+              <li><a href="#">MENU</a></li>
+              <li><a href="#">STORY</a></li>
+              <li><a href="#">NEWS</a></li>
+              <li><a href="#">STORE</a></li>
+              <li><a href="#">CUSTOMER</a></li>
+            </ul>
+          </div>
+          <div class="submenu">
+            <div class="lnb">
+              <ul>
+                <li>
+                  <ul>
+                    <li><!-- <a href="#">서브메뉴1</a> --></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="#">브랜드</a></li>
+                    <li><a href="#">Why 버거킹</a></li>
+                    <li><a href="#">ESG 경영</a></li>
+                    <li><a href="#">Smart QSR</a></li>
+                    <li><a href="#">수상실적</a></li>
+                    <li><a href="#">광고영상</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">공지사항</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><!-- <a href="#">서브메뉴4</a> --></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><!-- <a href="#">서브메뉴5</a> --></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="franchise"><a href="#" class="franchise">가맹점 모집</a></div>
+      </header>
+    </div>
+  </body>
+</html>
