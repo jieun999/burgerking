@@ -1,0 +1,3741 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴로 페이지 내 이동</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    $(function(){
+    $(".submenu").slideUp(500);
+
+    $(".nav_menu ul li").hover(function(){
+        $(".submenu").stop().slideDown(500);
+    },function(){
+        $(".submenu").stop().slideUp(500);
+    });
+
+    $(".submenu").hover(function(){
+        $(".submenu").stop().slideDown(500);
+    },function(){
+        $(".submenu").stop().slideUp(500);
+    });
+}); 
+  </script>
+  <style>
+    *{margin: 0;padding: 0;}
+    ul{list-style: none;}
+    a{text-decoration: none; color: #502314;}
+    
+    .wrap{
+        background: #f5ebdc;
+    }
+
+    header{
+    position: relative;
+    width: 1620px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    background: #f5ebdc;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header .logo{
+    min-width: 200px;
+    height: 25px;
+    background: url(../images/bg_logo.svg) no-repeat;
+    text-align: left;
+  }
+  header .nav{
+    width: 100%;
+  }
+  .nav_menu {
+    max-width: 1620px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin: 0 auto;
+    font-size: 24px;
+    background: #f5ebdc;
+  }
+  .nav_menu ul {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+  }
+  .nav_menu ul li {
+    flex: 1 1 10%;
+    text-align: center;
+    line-height: 50px;
+  }
+  .nav_menu ul li a:hover,
+  .nav_menu ul li a.on {
+    color: #d62300;
+  }
+  .nav_nav_menu ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .submenu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 90px;
+    background: #502314;
+    border-radius: 0 0 15px 15px;
+  }
+  .submenu .lnb {
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+  .submenu .lnb > ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .submenu .lnb > ul > li {
+    flex: 1 1 20%;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .submenu .lnb > ul > li a {
+    color: #70554c;
+  }
+  .submenu .lnb > ul > li a:hover {
+    color: #fffcf8;
+  }
+   header .franchise{
+    min-width: 200px;
+    text-align: right;
+  } 
+  header > .franchise a{
+    height: 40px;
+    padding: 5px 20px 5px 35px;
+    font-size: 13px;
+    white-space: nowrap;
+    border-radius: 30px;
+    line-height: 30px;
+    background-color: rgba(80, 35, 20, .05);
+    background-size: 14px;
+    background-image: url(../images/ico_tit_store.svg);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    box-sizing: border-box;
+    font-weight: bold;
+  }
+
+
+    /* 메뉴 스타일 */
+    .menu {
+      display: flex;
+      /* justify-content: space-around; */
+      background-color: #f5ebdc;
+      padding: 10px 0 10px 85px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      margin-top: 90px;
+    }
+    .menu div {
+      color: #502314;
+      cursor: pointer;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .menu div:hover {
+      background-color: #502314;
+      border-radius: 35px;
+      color: #fffcf8;
+    }
+    .menu div.active{
+        background-color: #502314;
+        border-radius: 35px;
+        color: #fffcf8;
+    }
+    /* 섹션 스타일 */
+    .section {
+      /* height: 100vh; */
+      /* padding: 20px; */
+      max-width: 1620px;
+      margin: 0 auto;
+      padding: 40px 60px 0;
+    }
+    .section h2{
+        margin: 50px 0 20px 0;
+    }
+
+    .menu_list ul{
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.menu_list ul li{
+    padding: 20px 50px;
+    background: #fffcf8;
+    text-align: center;
+    word-break: keep-all;
+    border-radius: 10px;
+}
+.menu_list .burger_flag{
+    display: flex;
+    justify-content: space-between;
+}
+.menu_list ul li .burger_img img{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+    /* #section1 { background-color: lightcoral; }
+    #section2 { background-color: lightblue; }
+    #section3 { background-color: lightgreen; }
+    #section4 { background-color: lightyellow; }
+    #section5 { background-color: burlywood; }
+    #section6 { background-color: darkcyan; }
+    #section7 { background-color: darkkhaki; }
+    #section8 { background-color: darksalmon ; } */
+
+    #top{
+        margin-top: 50px;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 60px;
+    }
+    #top a{
+        background:#fffcf8;
+        padding: 20px;
+        border-radius: 50%;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1 class="logo"></h1>
+        <div class="nav">
+          <div class="nav_menu">
+            <ul>
+              <li><a href="#">MENU</a></li>
+              <li><a href="#">STORY</a></li>
+              <li><a href="#">NEWS</a></li>
+              <li><a href="#">STORE</a></li>
+              <li><a href="#">CUSTOMER</a></li>
+            </ul>
+          </div>
+          <div class="submenu">
+            <div class="lnb">
+              <ul>
+                <li>
+                  <ul>
+                    <li><!-- <a href="#">서브메뉴1</a> --></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="#">브랜드</a></li>
+                    <li><a href="#">Why 버거킹</a></li>
+                    <li><a href="#">ESG 경영</a></li>
+                    <li><a href="#">Smart QSR</a></li>
+                    <li><a href="#">수상실적</a></li>
+                    <li><a href="#">광고영상</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">공지사항</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><!-- <a href="#">서브메뉴4</a> --></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><!-- <a href="#">서브메뉴5</a> --></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="franchise"><a href="#" class="franchise">가맹점 모집</a></div>
+    </header>
+          <!-- 페이지 내용 -->
+        <section>
+            <div id="section1" class="section">
+              <h2 class="title">추천메뉴</h2>
+              <div class="menu_list">
+                  <ul>
+                      <li class="01_mozza">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_01.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼</h4>
+                                  <p>통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="02_mozza_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_02.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 라지세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="03_mozza_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_03.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="04_mozza_BBQ">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_04.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼</h4>
+                                  <p>BBQ 통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="05_mozza_BBQ_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_05.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="06_mozza_BBQ_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_06.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 라지세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="07_mozza_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_07.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 세트</h4>
+                                  <p>통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="08_mozza_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_08.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 라지세트</h4>
+                                  <p>통모짜 와퍼주니어 라지세트+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="09_mozza_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_09.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어</h4>
+                                  <p>통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="10_mozza_BBQ_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_10.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="11_mozza_BBQ_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_11.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 라지세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="12_mozza_BBQ_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_12.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어</h4>
+                                  <p>BBQ 통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="13_mozza_pack1">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_13.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩1</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 핫 토마토 모짜볼 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="14_mozza_pack2">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_14.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩2</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="15_mozza_pack3">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_15.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩3</h4>
+                                  <p>불고기와퍼 + 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 스윗어니언 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="16_mozza_pack4">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_16.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩4</h4>
+                                  <p>와퍼 + BBQ 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 구운갈릭 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="17_bullMax_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_17.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="18_bullMax">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_18.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈</h4>
+                                  <p>불끈버거 맥시멈</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="19_bullMax_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_19.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 라지세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="20_bullMax_double_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_20.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="21_bullMax_double_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_21.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 라지세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="22_bullMax_double">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_22.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블</h4>
+                                  <p>불끈버거 맥시멈 더블</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="23_monster">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_23.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼</h4>
+                                  <p>몬스터와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="24_monster_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_24.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="25_monster_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_25.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 라지세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="26_cheese">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_26.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="27_cheese_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_27.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="28_cheese_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_28.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼 세트</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+            <div id="section2" class="section">
+              <h2 class="title">오리지널스&맥시멈</h2>
+              <div class="menu_list">
+                  <ul>
+                      <li class="01_mozza">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_01.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼</h4>
+                                  <p>통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="02_mozza_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_02.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 라지세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="03_mozza_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_03.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="04_mozza_BBQ">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_04.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼</h4>
+                                  <p>BBQ 통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="05_mozza_BBQ_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_05.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="06_mozza_BBQ_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_06.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 라지세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="07_mozza_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_07.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 세트</h4>
+                                  <p>통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="08_mozza_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_08.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 라지세트</h4>
+                                  <p>통모짜 와퍼주니어 라지세트+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="09_mozza_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_09.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어</h4>
+                                  <p>통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="10_mozza_BBQ_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_10.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="11_mozza_BBQ_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_11.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 라지세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="12_mozza_BBQ_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_12.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어</h4>
+                                  <p>BBQ 통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="13_mozza_pack1">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_13.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩1</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 핫 토마토 모짜볼 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="14_mozza_pack2">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_14.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩2</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="15_mozza_pack3">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_15.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩3</h4>
+                                  <p>불고기와퍼 + 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 스윗어니언 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="16_mozza_pack4">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_16.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩4</h4>
+                                  <p>와퍼 + BBQ 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 구운갈릭 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="17_bullMax_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_17.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="18_bullMax">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_18.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈</h4>
+                                  <p>불끈버거 맥시멈</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="19_bullMax_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_19.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 라지세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="20_bullMax_double_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_20.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="21_bullMax_double_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_21.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 라지세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="22_bullMax_double">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_22.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블</h4>
+                                  <p>불끈버거 맥시멈 더블</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="23_monster">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_23.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼</h4>
+                                  <p>몬스터와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="24_monster_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_24.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="25_monster_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_25.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 라지세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="26_cheese">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_26.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="27_cheese_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_27.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="28_cheese_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_28.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼 세트</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+            <div id="section3" class="section">
+              <h2 class="title">프리미엄</h2>
+              <div class="menu_list">
+                  <ul>
+                      <li class="01_mozza">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_01.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼</h4>
+                                  <p>통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="02_mozza_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_02.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 라지세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="03_mozza_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_03.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="04_mozza_BBQ">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_04.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼</h4>
+                                  <p>BBQ 통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="05_mozza_BBQ_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_05.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="06_mozza_BBQ_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_06.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 라지세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="07_mozza_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_07.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 세트</h4>
+                                  <p>통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="08_mozza_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_08.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 라지세트</h4>
+                                  <p>통모짜 와퍼주니어 라지세트+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="09_mozza_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_09.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어</h4>
+                                  <p>통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="10_mozza_BBQ_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_10.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="11_mozza_BBQ_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_11.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 라지세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="12_mozza_BBQ_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_12.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어</h4>
+                                  <p>BBQ 통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="13_mozza_pack1">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_13.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩1</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 핫 토마토 모짜볼 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="14_mozza_pack2">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_14.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩2</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="15_mozza_pack3">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_15.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩3</h4>
+                                  <p>불고기와퍼 + 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 스윗어니언 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="16_mozza_pack4">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_16.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩4</h4>
+                                  <p>와퍼 + BBQ 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 구운갈릭 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="17_bullMax_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_17.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="18_bullMax">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_18.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈</h4>
+                                  <p>불끈버거 맥시멈</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="19_bullMax_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_19.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 라지세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="20_bullMax_double_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_20.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="21_bullMax_double_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_21.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 라지세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="22_bullMax_double">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_22.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블</h4>
+                                  <p>불끈버거 맥시멈 더블</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="23_monster">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_23.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼</h4>
+                                  <p>몬스터와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="24_monster_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_24.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="25_monster_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_25.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 라지세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="26_cheese">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_26.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="27_cheese_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_27.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="28_cheese_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_28.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼 세트</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+            <div id="section4" class="section">
+              <h2 class="title">와퍼&주니어</h2>
+              <div class="menu_list">
+                  <ul>
+                      <li class="01_mozza">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_01.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼</h4>
+                                  <p>통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="02_mozza_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_02.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 라지세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="03_mozza_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_03.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="04_mozza_BBQ">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_04.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼</h4>
+                                  <p>BBQ 통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="05_mozza_BBQ_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_05.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="06_mozza_BBQ_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_06.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 라지세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="07_mozza_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_07.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 세트</h4>
+                                  <p>통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="08_mozza_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_08.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 라지세트</h4>
+                                  <p>통모짜 와퍼주니어 라지세트+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="09_mozza_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_09.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어</h4>
+                                  <p>통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="10_mozza_BBQ_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_10.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="11_mozza_BBQ_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_11.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 라지세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="12_mozza_BBQ_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_12.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어</h4>
+                                  <p>BBQ 통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="13_mozza_pack1">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_13.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩1</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 핫 토마토 모짜볼 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="14_mozza_pack2">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_14.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩2</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="15_mozza_pack3">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_15.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩3</h4>
+                                  <p>불고기와퍼 + 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 스윗어니언 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="16_mozza_pack4">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_16.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩4</h4>
+                                  <p>와퍼 + BBQ 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 구운갈릭 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="17_bullMax_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_17.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="18_bullMax">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_18.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈</h4>
+                                  <p>불끈버거 맥시멈</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="19_bullMax_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_19.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 라지세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="20_bullMax_double_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_20.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="21_bullMax_double_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_21.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 라지세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="22_bullMax_double">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_22.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블</h4>
+                                  <p>불끈버거 맥시멈 더블</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="23_monster">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_23.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼</h4>
+                                  <p>몬스터와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="24_monster_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_24.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="25_monster_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_25.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 라지세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="26_cheese">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_26.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="27_cheese_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_27.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="28_cheese_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_28.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼 세트</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+            <div id="section5" class="section">
+              <h2 class="title">치킨&슈림프버거</h2>
+              <div class="menu_list">
+                  <ul>
+                      <li class="01_mozza">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_01.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼</h4>
+                                  <p>통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="02_mozza_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_02.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 라지세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="03_mozza_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_03.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="04_mozza_BBQ">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_04.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼</h4>
+                                  <p>BBQ 통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="05_mozza_BBQ_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_05.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="06_mozza_BBQ_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_06.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 라지세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="07_mozza_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_07.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 세트</h4>
+                                  <p>통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="08_mozza_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_08.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 라지세트</h4>
+                                  <p>통모짜 와퍼주니어 라지세트+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="09_mozza_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_09.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어</h4>
+                                  <p>통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="10_mozza_BBQ_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_10.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="11_mozza_BBQ_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_11.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 라지세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="12_mozza_BBQ_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_12.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어</h4>
+                                  <p>BBQ 통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="13_mozza_pack1">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_13.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩1</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 핫 토마토 모짜볼 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="14_mozza_pack2">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_14.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩2</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="15_mozza_pack3">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_15.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩3</h4>
+                                  <p>불고기와퍼 + 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 스윗어니언 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="16_mozza_pack4">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_16.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩4</h4>
+                                  <p>와퍼 + BBQ 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 구운갈릭 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="17_bullMax_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_17.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="18_bullMax">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_18.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈</h4>
+                                  <p>불끈버거 맥시멈</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="19_bullMax_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_19.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 라지세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="20_bullMax_double_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_20.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="21_bullMax_double_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_21.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 라지세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="22_bullMax_double">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_22.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블</h4>
+                                  <p>불끈버거 맥시멈 더블</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="23_monster">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_23.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼</h4>
+                                  <p>몬스터와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="24_monster_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_24.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="25_monster_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_25.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 라지세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="26_cheese">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_26.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="27_cheese_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_27.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="28_cheese_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_28.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼 세트</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+            <div id="section6" class="section">
+              <h2 class="title">올데이킹&킹모닝</h2>
+              <div class="menu_list">
+                  <ul>
+                      <li class="01_mozza">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_01.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼</h4>
+                                  <p>통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="02_mozza_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_02.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 라지세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="03_mozza_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_03.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="04_mozza_BBQ">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_04.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼</h4>
+                                  <p>BBQ 통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="05_mozza_BBQ_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_05.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="06_mozza_BBQ_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_06.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 라지세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="07_mozza_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_07.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 세트</h4>
+                                  <p>통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="08_mozza_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_08.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 라지세트</h4>
+                                  <p>통모짜 와퍼주니어 라지세트+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="09_mozza_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_09.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어</h4>
+                                  <p>통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="10_mozza_BBQ_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_10.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="11_mozza_BBQ_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_11.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 라지세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="12_mozza_BBQ_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_12.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어</h4>
+                                  <p>BBQ 통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="13_mozza_pack1">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_13.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩1</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 핫 토마토 모짜볼 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="14_mozza_pack2">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_14.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩2</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="15_mozza_pack3">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_15.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩3</h4>
+                                  <p>불고기와퍼 + 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 스윗어니언 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="16_mozza_pack4">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_16.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩4</h4>
+                                  <p>와퍼 + BBQ 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 구운갈릭 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="17_bullMax_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_17.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="18_bullMax">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_18.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈</h4>
+                                  <p>불끈버거 맥시멈</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="19_bullMax_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_19.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 라지세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="20_bullMax_double_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_20.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="21_bullMax_double_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_21.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 라지세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="22_bullMax_double">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_22.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블</h4>
+                                  <p>불끈버거 맥시멈 더블</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="23_monster">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_23.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼</h4>
+                                  <p>몬스터와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="24_monster_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_24.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="25_monster_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_25.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 라지세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="26_cheese">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_26.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="27_cheese_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_27.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="28_cheese_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_28.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼 세트</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+            <div id="section7" class="section">
+              <h2 class="title">사이드</h2>
+              <div class="menu_list">
+                  <ul>
+                      <li class="01_mozza">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_01.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼</h4>
+                                  <p>통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="02_mozza_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_02.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 라지세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="03_mozza_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_03.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="04_mozza_BBQ">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_04.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼</h4>
+                                  <p>BBQ 통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="05_mozza_BBQ_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_05.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="06_mozza_BBQ_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_06.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 라지세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="07_mozza_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_07.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 세트</h4>
+                                  <p>통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="08_mozza_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_08.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 라지세트</h4>
+                                  <p>통모짜 와퍼주니어 라지세트+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="09_mozza_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_09.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어</h4>
+                                  <p>통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="10_mozza_BBQ_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_10.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="11_mozza_BBQ_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_11.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 라지세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="12_mozza_BBQ_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_12.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어</h4>
+                                  <p>BBQ 통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="13_mozza_pack1">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_13.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩1</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 핫 토마토 모짜볼 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="14_mozza_pack2">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_14.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩2</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="15_mozza_pack3">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_15.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩3</h4>
+                                  <p>불고기와퍼 + 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 스윗어니언 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="16_mozza_pack4">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_16.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩4</h4>
+                                  <p>와퍼 + BBQ 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 구운갈릭 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="17_bullMax_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_17.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="18_bullMax">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_18.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈</h4>
+                                  <p>불끈버거 맥시멈</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="19_bullMax_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_19.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 라지세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="20_bullMax_double_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_20.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="21_bullMax_double_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_21.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 라지세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="22_bullMax_double">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_22.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블</h4>
+                                  <p>불끈버거 맥시멈 더블</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="23_monster">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_23.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼</h4>
+                                  <p>몬스터와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="24_monster_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_24.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="25_monster_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_25.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 라지세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="26_cheese">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_26.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="27_cheese_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_27.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="28_cheese_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_28.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼 세트</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+            <div id="section8" class="section">
+              <h2 class="title">디저트</h2>
+              <div class="menu_list">
+                  <ul>
+                      <li class="01_mozza">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_01.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼</h4>
+                                  <p>통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="02_mozza_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_02.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 라지세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="03_mozza_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_03.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜와퍼 세트</h4>
+                                  <p>통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="04_mozza_BBQ">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_04.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼</h4>
+                                  <p>BBQ 통모짜와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="05_mozza_BBQ_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_05.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="06_mozza_BBQ_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_06.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜와퍼 라지세트</h4>
+                                  <p>BBQ 통모짜와퍼+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="07_mozza_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_07.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 세트</h4>
+                                  <p>통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="08_mozza_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_08.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어 라지세트</h4>
+                                  <p>통모짜 와퍼주니어 라지세트+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="09_mozza_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_09.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 와퍼주니어</h4>
+                                  <p>통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="10_mozza_BBQ_Junior_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_10.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(R)+코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="11_mozza_BBQ_Junior_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_11.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어 라지세트</h4>
+                                  <p>BBQ 통모짜 와퍼주니어+프렌치프라이(L)+코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="12_mozza_BBQ_Junior">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_12.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>BBQ 통모짜 와퍼주니어</h4>
+                                  <p>BBQ 통모짜 와퍼주니어</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="13_mozza_pack1">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_13.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩1</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 핫 토마토 모짜볼 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="14_mozza_pack2">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_14.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩2</h4>
+                                  <p>통모짜와퍼 + BBQ 통모짜와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="15_mozza_pack3">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_15.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩3</h4>
+                                  <p>불고기와퍼 + 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 스윗어니언 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="16_mozza_pack4">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_16.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>통모짜 팩4</h4>
+                                  <p>와퍼 + BBQ 통모짜와퍼 + 너겟킹 4조각 + 쉐이킹프라이 구운갈릭 + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="17_bullMax_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_17.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="18_bullMax">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_18.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈</h4>
+                                  <p>불끈버거 맥시멈</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="19_bullMax_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_19.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 라지세트</h4>
+                                  <p>불끈버거 맥시멈 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="20_bullMax_double_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_20.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="21_bullMax_double_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_21.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블 라지세트</h4>
+                                  <p>불끈버거 맥시멈 더블 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="22_bullMax_double">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_22.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>불끈버거 맥시멈 더블</h4>
+                                  <p>불끈버거 맥시멈 더블</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="23_monster">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_23.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼</h4>
+                                  <p>몬스터와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="24_monster_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_24.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="25_monster_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_25.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>몬스터와퍼 라지세트</h4>
+                                  <p>몬스터와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="26_cheese">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_26.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="27_cheese_L">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_27.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(L) + 코카콜라(L)</p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="28_cheese_set">
+                          <div class="burger">
+                              <div class="burger_flag">
+                                  <p>NEW</p>
+                                  <p><img src="./images/sub_manu/ico_hot.svg" alt=""></p>
+                              </div>
+                              <div class="burger_img">
+                                  <p><img src="./images/sub_manu/best_28.png" alt=""></p>
+                              </div>
+                              <div class="burger_name">
+                                  <h4>콰트로치즈와퍼 세트</h4>
+                                  <p>콰트로치즈와퍼 + 프렌치프라이(R) + 코카콜라(R)</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+        </section>
+
+      <!-- 메뉴 -->
+      <div class="menu">
+        <div id="section1">추천메뉴</div>
+        <div id="section2">오리지널스&맥시멈</div>
+        <div id="section3">프리미엄</div>
+        <div id="section4">와퍼&주니어</div>
+        <div id="section5">치킨&슈림프버거</div>
+        <div id="section6">올데이킹&킹모닝</div>
+        <div id="section7">사이드</div>
+        <div id="section8">음료&디저트</div>
+      </div>
+      
+      <div id="top"><a href="">top</a> </div>
+</div>
+  <script>
+    let ht = document.querySelector("section h2").clientHeight;
+    document.querySelectorAll(".menu div").forEach(function (v, k) {
+        v.onclick = function () {
+          window.scrollTo({
+            top: document.querySelector(`#section${k + 1}`).offsetTop + ht,
+            behavior: "smooth",
+          });
+        };
+      });
+    /*function scrollToSection(clickedElement) {
+      // 모든 메뉴 항목에서 'active' 클래스 제거
+      const menuItems = document.querySelectorAll('.menu > div');
+      menuItems.forEach(item => item.classList.remove('active'));
+
+      // 클릭한 메뉴 항목에 'active' 클래스 추가
+      clickedElement.classList.add('active');
+    };*/
+
+    document.querySelector("#top").querySelector("a").addEventListener("click", function(e){
+        e.preventDefault();
+        window.scrollTo({top:0,behavior:"smooth"});
+      });
+  </script>
+
+</body>
+</html>

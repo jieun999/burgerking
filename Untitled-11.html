@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴 클릭 후 후버 유지</title>
+  <style>
+    /* 메뉴 스타일 */
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      background-color: #333;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+    .menu > div {
+      color: white;
+      cursor: pointer;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .menu > div:hover {
+      background-color: #555;
+    }
+    
+    /* 클릭된 메뉴 항목 스타일 */
+    .wrap .menu > div.active {
+      background-color: #777;
+    }
+
+    /* 섹션 스타일 */
+    .section {
+      height: 100vh;
+      padding: 20px;
+    }
+
+    #section1 { background-color: lightcoral; }
+    #section2 { background-color: lightblue; }
+    #section3 { background-color: lightgreen; }
+    #section4 { background-color: lightyellow; }
+  </style>
+</head>
+<body>
+
+  <!-- 메뉴 -->
+  <div class="wrap">
+      <div class="menu">
+        <div onclick="scrollToSection('section1')">추천메뉴</div>
+        <div onclick="scrollToSection('section2')">오리지널스&맥시멈</div>
+        <div onclick="scrollToSection('section3')">프리미엄</div>
+        <div onclick="scrollToSection('section4')">와퍼&주니어</div>
+        <div onclick="scrollToSection('section5')">치킨&슈림프버거</div>
+        <div onclick="scrollToSection('section6')">올데이킹&킹모닝</div>
+        <div onclick="scrollToSection('section7')">사이드</div>
+        <div onclick="scrollToSection('section8')">음료&디저트</div>
+      </div>
+      <!-- 페이지 내용 -->
+      <section>
+          <div id="section1" class="section">
+            <h2>섹션 1</h2>
+            <p>여기는 첫 번째 섹션입니다.</p>
+          </div>
+          <div id="section2" class="section">
+            <h2>섹션 2</h2>
+            <p>여기는 두 번째 섹션입니다.</p>
+          </div>
+          <div id="section3" class="section">
+            <h2>섹션 3</h2>
+            <p>여기는 세 번째 섹션입니다.</p>
+          </div>
+          <div id="section4" class="section">
+            <h2>섹션 4</h2>
+            <p>여기는 네 번째 섹션입니다.</p>
+          </div>
+      </section>
+  </div>
+
+  <script>
+    function scrollToSection(sectionId, clickedElement) {
+      // 모든 메뉴 항목에서 'active' 클래스 제거
+      const menuItems = document.querySelectorAll('.menu > div');
+      menuItems.forEach(item => item.classList.remove('active'));
+
+      // 클릭한 메뉴 항목에 'active' 클래스 추가
+      clickedElement.classList.add('active');
+
+      // 해당 섹션으로 스크롤
+      const target = document.getElementById(sectionId);
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>
+

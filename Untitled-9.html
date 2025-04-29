@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      section {
+        padding: 100px;
+      }
+      .con {
+        width: 1420px;
+        margin: 0 auto;
+        display: flex;
+      }
+      .con .left {
+        position: sticky;
+        top: 100px;
+        height: 100%;
+        width: 40%;
+      }
+      .con .left ul li a.on {
+        color: #f00;
+      }
+      .con .right {
+        width: 60%;
+        position: relative;
+        top: 100px;
+      }
+      .con .right ul li {
+        height: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+    </section>
+    <div class="con">
+      <div class="left">
+        <ul>
+          <li><a href="#">하나</a></li>
+          <li><a href="#">둘</a></li>
+          <li><a href="#">셋</a></li>
+          <li><a href="#">넷</a></li>
+          <li><a href="#">다섯</a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <ul>
+          <li id="con1">하나</li>
+          <li id="con2">둘</li>
+          <li id="con3">셋</li>
+          <li id="con4">넷</li>
+          <li id="con5">
+            <a href="">top</a> 
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      let ht = document.querySelector("section").clientHeight;
+      // document
+      //   .querySelectorAll(".left ul li")[0]
+      //   .querySelector("a")
+      //   .classList.add("on");
+
+      function my() {
+        document.querySelectorAll(".left ul li").forEach(function (v, k) {
+          v.querySelector("a").classList.remove("on");
+        });
+      }
+      // let conTop = document.querySelector("#con3").offsetTop;
+      // console.log(conTop);
+      
+      document.querySelectorAll(".left ul li").forEach(function (v, k) {
+        v.onclick = function (e) {
+          e.preventDefault();
+          my();
+          v.querySelector("a").classList.add("on");
+          window.scrollTo({
+            top: document.querySelector(`#con${k + 1}`).offsetTop + ht,
+            behavior: "smooth",
+          });
+        };
+      });
+      /* document.querySelector("#con5").querySelector("a").onclick=function(event){
+        event.preventDefault();
+        //#으로 가지 않게 하는 속성값
+        window.scrollTo({top:200,behavior:"smooth"});
+        //top(a)클릭 시 위(top:0)로 부드럽게(smooth)올라가는 속성값
+      };*/
+
+      // document.querySelector("#con5").querySelector("a").addEventListener("click", function(event){
+      //   event.preventDefault();
+      //   window.scrollTo({top:200,behavior:"smooth"});
+      // });
+    </script>
+  </body>
+</html>
