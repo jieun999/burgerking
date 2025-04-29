@@ -1,60 +1,104 @@
 @charset "utf-8";
 
+section h1 {
+  text-align: center;
+}
 
-section h1{
+section .intro {
+  width: 100%;
+  display: flex;
+  margin: 50px 0;
+}
+.bk_card {
+  width: 1620px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background: #fffcf8;
+  padding: 50px 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.bk_card .card_con {
+  /* width: 1200px;*/
+  flex: 1;
+}
+.card_title {
+  font-size: 23px;
+  margin-bottom: 40px;
+}
+
+.card_txt {
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+.card_txt span.underscore {
+  box-shadow: inset 0 -5px rgba(255, 0, 0, 0.2);
+}
+.bk_card .card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card_con .card_title {
+  text-align: center;
+}
+.card03 .bk_card {
+  width: 100%;
+}
+.card03 .bkinfo > div:first-child {
+  flex: 1;
+  padding: 0 100px;
+}
+.card03 h2{
     text-align: center;
+    font-size: 32px;
 }
-
-section .intro{
-    width: 100%;
-    display: flex;
-    margin: 50px 0;
+.card03 ul{
+    padding: 30px;
 }
-.bk_card{
-    width: 1620px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    background: #fffcf8;
-    padding: 50px 30px;
-    border-radius: 20px;
-    box-sizing: border-box;
+.card03 ul li > div {
+  display: flex;
+  justify-content: space-between;
 }
-.bk_card .card_con{
-    width: 1200px;
-    flex: 1 1 30%;
+.card03 ul li > div > p{
+    padding-bottom: 8px;
 }
-.card_title{ font-size: 23px;}
-
-.card_txt{
-    margin: 10px 0;
-    font-size: 15px;
+.card03 ul li > div > p:last-child{
     font-weight: bold;
+    text-align: right;
 }
-.card_txt span.underscore{
-    box-shadow: inset 0 -5px rgba(255, 0, 0, .2);
+.card03 ul li > div > p span{
+    font-size: 12px;
+    color: rgb(137, 102, 91);
 }
-.bk_card .card_img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/*이용약관 및 카피라이트*/
+footer {
+  width: 100%;
+  /* padding: 40px 60px;
+  box-sizing: border-box; */
+  background: #fffcf8;
 }
-.card_con .card_title{
-    text-align: center;
+footer .foot_copyright {
+  width: 100%;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 40px;
+  align-items: center;
 }
-.card03 .bk_card{
-    width: 100%;
+.terms_of_use {
+  display: flex;
+  margin-bottom: 20px;
+  /* padding-left: 255px; */
+  gap: 20px;
+  font-size: 14px;
 }
-.card03 .bk_card .card_txt{
-    width: 1200px;
+footer .copyright {
+  /* display: flex; */
 }
-.card03 .bk_card .card_txt .company_infor{
-    width: 60%;
-    margin: 0 auto;
-}
-.card03 .company_infor ul{
-    display: flex;
-}
-.card03 .company_infor ul li{
-    flex: 1;
+footer .copyright .information {
+  /* margin-left: 55px; */
 }
