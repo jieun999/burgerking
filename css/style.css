@@ -709,6 +709,78 @@ footer .foot_copyright {
 }
 
 
+    /* 메뉴 스타일 */
+    .bk_menu_list {
+      display: flex;
+      /* justify-content: space-around; */
+      background-color: #f5ebdc;
+      padding: 10px 0 10px 85px;
+      box-sizing: border-box;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      margin-top: 90px;
+    }
+    .bk_menu_list div {
+      color: #502314;
+      cursor: pointer;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .bk_menu_list div:hover {
+      background-color: #502314;
+      border-radius: 35px;
+      color: #fffcf8;
+    }
+    .bk_menu_list div.active{
+        background-color: #502314;
+        border-radius: 35px;
+        color: #fffcf8;
+    }
+    
+    /* 섹션 스타일 */
+    .section_menu_list{
+        position: relative;
+        top: 60px;
+        width: 100%;
+        padding: 0px 100px 0;
+        box-sizing: border-box;
+    }
+    .section_menu_list h2{
+        width: 100%;
+        padding-top: 50px;
+    }
+
+    .menu_list ul{
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.menu_list ul li{
+    padding: 20px 50px;
+    background: #fffcf8;
+    text-align: center;
+    word-break: keep-all;
+    border-radius: 10px;
+}
+.menu_list .burger_flag{
+    display: flex;
+    justify-content: space-between;
+}
+.menu_list ul li .burger_img img{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+
+
+
 
 #popup {
   position: fixed;

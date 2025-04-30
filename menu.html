@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="./js/jquery.js"></script>
   <style>
-    *{margin: 0;padding: 0;}
+    /* *{margin: 0;padding: 0;}
     ul{list-style: none;}
     a{text-decoration: none; color: #502314;}
     
@@ -17,161 +17,8 @@
     }
 
     
+ */
 
-    /* 메뉴 스타일 */
-    .bk_menu_list {
-      display: flex;
-      /* justify-content: space-around; */
-      background-color: #f5ebdc;
-      padding: 10px 0 10px 85px;
-      box-sizing: border-box;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 10;
-      margin-top: 90px;
-    }
-    .bk_menu_list div {
-      color: #502314;
-      cursor: pointer;
-      padding: 10px 20px;
-      text-align: center;
-      font-size: 16px;
-      font-weight: bold;
-    }
-    .bk_menu_list div:hover {
-      background-color: #502314;
-      border-radius: 35px;
-      color: #fffcf8;
-    }
-    .bk_menu_list div.active{
-        background-color: #502314;
-        border-radius: 35px;
-        color: #fffcf8;
-    }
-    /* 섹션 스타일 */
-    .section_menu_list{
-        width: 100%;
-        padding: 40px 100px 0;
-        box-sizing: border-box;
-    }
-    .section_menu_list h2{
-        width: 100%;
-        margin: 100px 0 20px 0;
-    }
-
-    .menu_list ul{
-    width: 100%;
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
-}
-.menu_list ul li{
-    padding: 20px 50px;
-    background: #fffcf8;
-    text-align: center;
-    word-break: keep-all;
-    border-radius: 10px;
-}
-.menu_list .burger_flag{
-    display: flex;
-    justify-content: space-between;
-}
-.menu_list ul li .burger_img img{
-    width: 50%;
-    height: 50%;
-    object-fit: cover;
-}
-
-    #top{
-        margin-top: 50px;
-        display: flex;
-        justify-content: flex-end;
-        padding: 0 60px;
-    }
-    #top a{
-        background-color:#fffcf8;
-        padding: 30px;
-        border-radius: 50%;
-        /* font-weight: bold;  */
-        background-image: url(./images/btn_top.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-bottom: 20px;
-        box-shadow: 5px 5px 10px #70554c93;
-    }
-
-footer {
-  width: 100%;
-  padding: 40px 60px;
-  box-sizing: border-box;
-  background: #fffcf8;
-}
-.foot_copyright .logo{
-  padding-right: 40px;
-  box-sizing: border-box;
-}
-footer .foot_copyright {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-.terms_of_use {
-  display: flex;
-  margin-bottom: 20px;
-  /* padding-left: 255px; */
-  gap: 20px;
-  font-size: 14px;
-}
-
-.link {
-  flex: 1 1 30%;
-}
-.link .sns{
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 100px;
-} 
-.link .sns p{
-  margin-left: 10px;
-}
-.link div:first-child{
-  text-align: right;
-}
-.link .sns p:last-child{
-  margin-left: 30px;
-  padding-left: 20px;
-  box-sizing: border-box;
-  position: relative;
-}
-.link .sns p:last-child::after{
-  width: 2px;
-  height: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #000;
-}
-
-.link > div:first-child {
-  min-width: 200px;
-}
-.link > div:first-child a {
-  padding: 8px 35px 8px 20px;
-  font-size: 13px;
-  border-radius: 30px;
-  background-color: rgba(80, 35, 20, 0.05);
-  background-size: 14px;
-  background-image: url(../images/sns/ico_bt_link.svg);
-  background-repeat: no-repeat;
-  background-position: 75px center;
-  box-sizing: border-box;
-  font-weight: bold;
-}
   </style>
 </head>
 <body>
@@ -3701,22 +3548,8 @@ footer .foot_copyright {
         </div>
     </footer>
 </div>
-  <script>
-    let ht = document.querySelector(".section_menu_list h2").clientHeight;
-    document.querySelectorAll(".bk_menu_list div").forEach(function (v, k) {
-        v.onclick = function () {
-          window.scrollTo({
-            top: document.querySelector(`#section${k + 1}`).offsetTop + ht,
-            behavior: "smooth",
-          });
-        };
-      });
-
-    document.querySelector("#top").querySelector("a").addEventListener("click", function(e){
-        e.preventDefault();
-        window.scrollTo({top:0,behavior:"smooth"});
-      });
-  </script>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/menu.js"></script>
 </body>
 </html>
