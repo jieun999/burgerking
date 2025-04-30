@@ -1,10 +1,10 @@
 @charset "utf-8";
 
-section h1 {
+section.main h1 {
   text-align: center;
 }
 
-section .intro {
+section.main .intro {
   width: 100%;
   display: flex;
   margin: 50px 0;

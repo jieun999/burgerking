@@ -72,6 +72,13 @@ var swiper01 = new Swiper(".header_slide .mySwiper", {
 
   setInterval(next, 3000);
 
+
+//탑으로 이동
+document.querySelector("#top").querySelector("a").addEventListener("click", function(e){
+  e.preventDefault();
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
   //팝업창
 let popup = document.querySelector("#popup");
 let con = document.querySelector(".ad_con_01");

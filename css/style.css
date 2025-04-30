@@ -15,8 +15,6 @@
 } */
 @font-face {
   font-family: "SDGothicgBd";
-  font-style: normal;
-  font-weight: 100;
   src: url("../font/SDGothicNeoRound-gBd.otf") format("otf");
 }
 
@@ -32,13 +30,13 @@ a {
 }
 h1 {
   font-size: 42px;
-  font-family: SDGothicgBd, sans-serif;
+  font-family: "SDGothicgBd", sans-serif;
 }
 a,
 h1,
 h2,
 p {
-  font-family: SDGothicgBd, sans-serif;
+  font-family: "SDGothicgBd", sans-serif;
   color: #502314;
 }
 
@@ -115,11 +113,6 @@ header .nav {
   top: 90px;
   background: #502314;
   border-radius: 0 0 15px 15px;
-}
-.submenu .lnb {
-  /* width: 100%;
-  padding: 0px 550px;
-  box-sizing: border-box; */
 }
 .submenu .lnb > ul {
   width: 100%;
@@ -696,6 +689,24 @@ footer .foot_copyright {
   font-weight: bold;
 }
 
+
+#top{
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 60px;
+}
+#top a{
+  background-color:#fffcf8;
+  padding: 30px;
+  border-radius: 50%;
+  /* font-weight: bold;  */
+  background-image: url(../images/btn_top.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 10px #70554c93;
+}
 
 
 

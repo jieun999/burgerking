@@ -24,6 +24,7 @@
       /* justify-content: space-around; */
       background-color: #f5ebdc;
       padding: 10px 0 10px 85px;
+      box-sizing: border-box;
       position: fixed;
       width: 100%;
       top: 0;
@@ -51,9 +52,11 @@
     /* 섹션 스타일 */
     .section_menu_list{
         width: 100%;
-        padding: 40px 60px 0;
+        padding: 40px 100px 0;
+        box-sizing: border-box;
     }
     .section_menu_list h2{
+        width: 100%;
         margin: 100px 0 20px 0;
     }
 
@@ -3702,29 +3705,12 @@ footer .foot_copyright {
     let ht = document.querySelector(".section_menu_list h2").clientHeight;
     document.querySelectorAll(".bk_menu_list div").forEach(function (v, k) {
         v.onclick = function () {
-            //my();
-            //v.querySelector(".bk_menu div").classList.add("active");
           window.scrollTo({
             top: document.querySelector(`#section${k + 1}`).offsetTop + ht,
             behavior: "smooth",
           });
         };
       });
-
-      /*function my() {
-        document.querySelectorAll(".left ul li").forEach(function (v, k) {
-          v.querySelector(".bk_menu_list div").classList.remove("active");
-        });
-      }*/
-
-    /*function scrollToSection(clickedElement) {
-      // 모든 메뉴 항목에서 'active' 클래스 제거
-      const menuItems = document.querySelectorAll('.bk_menu_list > div');
-      menuItems.forEach(item => item.classList.remove('active'));
-
-      // 클릭한 메뉴 항목에 'active' 클래스 추가
-      clickedElement.classList.add('active');
-    };*/
 
     document.querySelector("#top").querySelector("a").addEventListener("click", function(e){
         e.preventDefault();
