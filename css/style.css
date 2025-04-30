@@ -47,8 +47,9 @@ p {
 }
 header {
   position: relative;
-  /* width: 1620px; */
-  padding: 20px 200px;
+  /* max-width: 1620px; */
+  width: 100%;
+  padding: 20px 100px;
   box-sizing: border-box;
   background: #f5ebdc;
   margin: 0 auto;
@@ -57,7 +58,7 @@ header {
   z-index: 999;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .bk header .logo {
@@ -75,21 +76,24 @@ header .nav {
   position: sticky;
   top: 0;
   z-index: 999;
-  margin: 0 auto;
   font-size: 24px;
   background: #f5ebdc;
 }
 .menu ul {
+  width: 100%; 
   display: flex;
-  height: 50px;
-  justify-content: space-between;
+  gap: 50px;
+  /* height: 50px; */
+  justify-content: center;
   align-items: center;
   font-weight: bold;
-  padding: 0 200px;
+  /* padding: 0 200px; */
   box-sizing: border-box;
+ 
 }
 .menu ul li {
-  flex: 1 1 10%;
+  /* flex: 1 1 10%; */
+  width: 150px;
   text-align: center;
   line-height: 50px;
 }
@@ -102,6 +106,7 @@ header .nav {
   display: block;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
 }
 .submenu {
   position: absolute;
@@ -112,16 +117,20 @@ header .nav {
   border-radius: 0 0 15px 15px;
 }
 .submenu .lnb {
-  margin: 0 auto;
-  padding: 0px 250px;
-  box-sizing: border-box;
+  /* width: 100%;
+  padding: 0px 550px;
+  box-sizing: border-box; */
 }
 .submenu .lnb > ul {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  gap: 50px;
+  justify-content: center;
+  /* justify-content: space-between; */
 }
 .submenu .lnb > ul > li {
-  flex: 1 1 20%;
+  /* flex: 1 1 20%; */
+  width: 150px;
   line-height: 40px;
   text-align: center;
   font-weight: bold;
@@ -152,7 +161,7 @@ header .nav {
   font-weight: bold;
 }
 
-section {
+section.main {
   width: 100%;
   max-width: 1620px;
   margin: 0px auto;
@@ -161,17 +170,17 @@ section {
 }
 
 /* 배너 */
-section .home_banner {
+.home_banner {
   width: 100%;
   display: flex;
   margin-bottom: 50px;
   gap: 10px;
 }
-section .home_banner .header_slide {
+.home_banner .header_slide {
   width: 1160px;
   margin: 0 auto;
 }
-section .home_banner .header_slide img {
+.home_banner .header_slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -202,7 +211,7 @@ section .home_banner .header_slide img {
   height: 100%;
   object-fit: cover;
 }
-section .home_banner .header_con {
+.home_banner .header_con {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -211,8 +220,8 @@ section .home_banner .header_con {
   gap: 10px;
   /* margin: 0 0 0 auto; */
 }
-section .home_banner .header_con_01,
-section .home_banner .header_con_02 {
+.home_banner .header_con_01,
+.home_banner .header_con_02 {
   width: 382px;
   padding: 30px;
   box-sizing: border-box;
@@ -226,13 +235,13 @@ section .home_banner .header_con_02 {
   flex-direction: column;
   justify-content: center;
 }
-section .home_banner .header_con_01 {
+.home_banner .header_con_01 {
   background-image: url(../images/header_con_01/bg_home_appdown.svg);
   background-repeat: no-repeat;
   background-position: 95% 80%;
   line-height: 28px;
 }
-section .home_banner .header_con_01 .my_app {
+.home_banner .header_con_01 .my_app {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -240,91 +249,88 @@ section .home_banner .header_con_01 .my_app {
   padding-top: 20px;
   gap: 20px;
 }
-section .home_banner .header_con_01 .my_app > div {
+.home_banner .header_con_01 .my_app > div {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-section .home_banner .header_con_01 .my_app > div p {
+.home_banner .header_con_01 .my_app > div p {
   background: #e4d7c8;
   border-radius: 30px;
   padding: 5px 15px;
 }
-section .home_banner .header_con_02 {
+.home_banner .header_con_02 {
   background: #502314;
   /* background-image: url(../images/header_con_02/bg_home_search.svg);
     background-repeat: no-repeat;
     background-position: 50% 90%; */
 }
-section .home_banner .header_con_02 p {
+.home_banner .header_con_02 p {
   color: #fffcf8;
   display: flex;
   flex-direction: column;
 }
-section .home_banner .header_con_02 p:last-child img {
-  /* display: inline;
-    width: 110%;
-    text-align: center; */
-}
 
 /* 광고영상 */
-section .home_ad {
+.home_ad {
   position: relative;
   width: 100%;
   height: 100%;
   margin: 50px 0;
 }
-section .home_ad .bk_title {
+.home_ad .bk_title {
   width: 100%;
   display: flex;
   align-items: center;
 }
-section .home_ad h1 {
+.home_ad h1 {
   flex: 1 1 0%;
   /* margin-top: 20px; */
 }
-section .home_ad p {
+.home_ad p {
   font-size: 22px;
   font-weight: bold;
   margin-top: 10px;
   word-break: keep-all;
 }
-section .home_ad .ad_con > div {
+.home_ad .ad_con > div {
   width: 100%;
   display: flex;
   gap: 2%;
 }
-section .home_ad .ad_con_01,
-section .home_ad .ad_con_02,
-section .home_ad .ad_con_03 {
+.home_ad .ad_con_01,
+.home_ad .ad_con_02,
+.home_ad .ad_con_03 {
   height: 100%;
   width: 100%;
   position: relative;
   flex: 1 1 30%;
   text-align: center;
+  cursor: pointer;
 }
-section .home_ad .ad_con_01::after,
-section .home_ad .ad_con_02::after,
-section .home_ad .ad_con_03::after {
+.home_ad .ad_con_01::after,
+.home_ad .ad_con_02::after,
+.home_ad .ad_con_03::after {
   content: url(../images/video_thumbnail/btn_play.svg);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-section .home_ad .ad_con p img {
+.home_ad .ad_con p img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 /* 매장소개 */
-section .home_my {
+.home_my {
   width: 100%;
   height: 100%;
   margin: 50px 0;
 }
-section .home_my_con {
+.home_my_con {
   max-width: 1620px;
   width: 100%;
   height: 100%;
@@ -332,13 +338,13 @@ section .home_my_con {
   gap: 2%;
 }
 
-section .home_my_con .my_con_txt {
+.home_my_con .my_con_txt {
   width: 100%;
   padding: 20px 20px;
   box-sizing: border-box;
   border-radius: 10px 10px 0 0;
 }
-section .home_my_con .my_con_txt p {
+.home_my_con .my_con_txt p {
   width: 15%;
   padding: 10px 0;
   font-size: 13px;
@@ -356,21 +362,21 @@ section .home_my_con .my_con_txt p {
   height: 467px;
   flex: 1 1 30%;
 }
-section .home_my_con p img {
+.home_my_con p img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 0 0 15px 15px;
 }
-section .home_my_con .my_con_txt > h2 {
+.home_my_con .my_con_txt > h2 {
   padding-bottom: 20px;
   font-size: 23px;
 }
-section .home_my_con .my_con_txt > div {
+.home_my_con .my_con_txt > div {
   display: flex;
   justify-content: flex-end;
 }
-section .home_my_con .my_con_txt > div > a {
+.home_my_con .my_con_txt > div > a {
   padding-right: 30px;
   background: url(../images/ico_move.svg) no-repeat right;
   font-weight: bold;
@@ -413,9 +419,9 @@ section .home_my_con .my_con_txt > div > a {
   height: 278px;
   object-fit: cover;
 }
-/* 집에서 만나는 버거킹 */
 
-section .home_delivery {
+/* 집에서 만나는 버거킹 */
+.home_delivery {
   margin: 50px 0;
   max-width: 1620px;
   width: 100%;
@@ -426,7 +432,7 @@ section .home_delivery {
   border-radius: 15px;
 }
 
-section .home_delivery .del_banner {
+.home_delivery .del_banner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -453,22 +459,22 @@ section .home_delivery .del_banner {
   color: #fa0;
 }
 /*고객과 함께 성장하는 버거킹*/
-section .home_customer {
+.home_customer {
   width: 100%;
   margin: 50px 0;
 }
-section .home_customer .home_custrmer_txt {
+.home_customer .home_custrmer_txt {
   width: 100%;
   display: flex;
   gap: 20px;
 }
-section .home_custrmer_txt .customer_01,
-section .home_custrmer_txt .customer_02,
-section .home_custrmer_txt .customer_03 {
+.home_custrmer_txt .customer_01,
+.home_custrmer_txt .customer_02,
+.home_custrmer_txt .customer_03 {
   width: 100%;
   flex: 1 1 30%;
 }
-section .home_custrmer_txt .customer_01 {
+.home_custrmer_txt .customer_01 {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -484,19 +490,20 @@ section .home_custrmer_txt .customer_01 {
   height: 100%;
   object-fit: cover;
   vertical-align: middle;
+  border-radius: 0 0 15px 15px;
 }
-section .customer_02,
-section .customer_03 {
+.customer_02,
+.customer_03 {
   width: 100%;
 }
-section .my_con_txt {
+.my_con_txt {
   width: 100%;
   background: #fffcf8;
   border-radius: 15px 15px 0 0;
   padding: 20px 20px;
   box-sizing: border-box;
 }
-section .home_custrmer_txt .my_con_txt p:first-child {
+.home_custrmer_txt .my_con_txt p:first-child {
   width: 20%;
   padding: 10px 0;
   font-size: 13px;
@@ -508,20 +515,20 @@ section .home_custrmer_txt .my_con_txt p:first-child {
   background: #faf4ed;
 }
 
-section .customer_02 .my_con_txt > h2,
-section .customer_03 .my_con_txt > h2 {
+.customer_02 .my_con_txt > h2,
+.customer_03 .my_con_txt > h2 {
   padding-bottom: 20px;
   font-size: 22px;
 }
 
-section .my_con_txt p img {
+.my_con_txt p img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 /*앱 홍보 배너*/
-section .home_app_banner {
+.main .home_app_banner {
   margin: 50px 0;
   max-width: 1620px;
   width: 100%;
@@ -664,13 +671,13 @@ footer .foot_copyright {
   position: relative;
 }
 .link .sns p:last-child::after{
+  content: "";
   width: 2px;
-  height: 5px;
+  height: 15px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #000;
+  top: 7px;
+  left: 0;
+  background: #e4d7c8;
 }
 
 .link > div:first-child {
@@ -698,16 +705,29 @@ footer .foot_copyright {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(119, 92, 84, 0.3);
+  background: rgba(119, 92, 84, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   visibility: hidden;
 }
+#popup p:first-child{
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  box-sizing: border-box;
+}
 #popup .pop {
-  width: 900px;
-  height: 500px;
+  width: 1100px;
+  height: 620px;
   border-radius: 20px;
-  background: #ccc;
+  background: #f5ebdc;
+}
+
+#popup p:last-child{
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
 }
